@@ -2,7 +2,7 @@
 ![image](https://github.com/SnowScriptWinterOfCode/QuickQuiz/assets/97171261/bd54be3f-6450-42a3-993b-06f9972fe548)
 
 ## Maintainers
-@i-am-SnehaChauhan and @Nitya-Pasrija 
+[@i-am-SnehaChauhan](https://github.com/i-am-SnehaChauhan) and [@Nitya-Pasrija](https://github.com/Nitya-Pasrija) 
 
 Please reach out to the maintainers if you get stuck or wish to report someone.
 
