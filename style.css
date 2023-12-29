@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@400;600&display=swap');
 
 :root {
-  background: linear-gradient(to right, rgb(205, 219, 250), rgb(181, 247, 247));
+  background: linear-gradient(to right, #638694, #005d7b);
   font-size: 62.5%;
+  filter: invert(0);
 }
 
 * {
@@ -10,7 +11,11 @@
   font-family: "Sono";
   margin: 0;
   padding: 0;
-  color: #3083cc;
+  color: #333;
+}
+
+#icon img{
+  height: 120px;
 }
 
 h1,
@@ -22,7 +27,7 @@ h4 {
 
 h1 {
   font-size: 7rem;
-  color: #3083cc;
+  color: #d6eced;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -43,66 +48,6 @@ h3 {
   font-weight: 500;
 }
 
-/*Toggle*/
-
-* {
-  box-sizing: border-box;
-}
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  transition: background-color 0.2s linear;
-}
-body.dark {
-  background-color: #292c35;
-}
-.checkbox {
-  opacity: 0;
-  position: relative;
-  margin-left: -12rem;
-  margin-top: 65rem;
-}
-
-.label {
-  width: 50px;
-  height: 26px;
-  background-color:#111;
-  display: flex;
-  border-radius:50px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  position: relative;
-  transform: scale(1.5);
-}
-
-.ball {
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  border-radius: 50%;
-  transition: transform 0.2s linear;
-}
-
-/*  target the elemenent after the label*/
-.checkbox:checked + .label .ball{
-  transform: translateX(24px);
-}
-
-.fa-moon {
-  color: pink;
-}
-
-.fa-sun {
-  color: yellow;
-}
-
 /* UTILITIES */
 
 .container {
@@ -120,6 +65,11 @@ body.dark {
 
 .container > * {
   width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
 .flex-column {
@@ -150,11 +100,10 @@ body.dark {
   padding: 1rem 0;
   width: 20rem;
   text-align: center;
-  border: 0.1rem solid #56a5eb;
-  border-radius :25px;
+  border: 0.1rem solid #004644;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: #56a5eb;
+  color: #004644;
   background-color: rgb(235, 244, 253);
 }
 
