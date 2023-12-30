@@ -1,16 +1,16 @@
+# Quick Quiz
+![image](https://github.com/SnowScriptWinterOfCode/QuickQuiz/assets/97171261/bd54be3f-6450-42a3-993b-06f9972fe548)
 
-# webD-kviz-app with Resolved Issues
+## Maintainers
+[@i-am-SnehaChauhan](https://github.com/i-am-SnehaChauhan) and [@Nitya-Pasrija](https://github.com/Nitya-Pasrija)
 
-A brief description of the changes that I have done in this project 
-and the respective issues they address.
+## Reviewers
+[@Akanchha112](https://github.com/Akanchha112)
 
+Please reach out to the maintainers if you get stuck or wish to report someone.
 
-## Contributer
-
-- [@SoumyaJindal](https://github.com/soumyajindal0707)
-
-
-## Features
+## Abstract
+This is a quiz platform
 
 This Application contains the following added features:
 
