@@ -172,6 +172,8 @@ body.dark {
 
 .btn:hover {
   cursor: pointer;
+  color:white;
+  background: #56a5eb;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
   transform: translateY(-0.1rem);
   transition: transform 150ms;
