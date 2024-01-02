@@ -48,19 +48,91 @@ h3 {
   font-weight: 500;
 }
 
+/*Toggle*/
+
+* {
+  box-sizing: border-box;
+}
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.2s linear;
+}
+body.dark {
+  background-color: #292c35;
+}
+.checkbox {
+  opacity: 0;
+}
+.box {
+  z-index: 5;
+  margin-right: 0rem;
+  position: absolute;
+  margin-left :1333px;
+  top: 0;
+  right: 0;
+  margin-top: 5rem;
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color:#111;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.ball {
+  position: absolute;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  margin-left: 0.3rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
+}
+
 /* UTILITIES */
 
 .container {
-  width: 100vw;
+  width: 100vh;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 80rem;
-  margin: 0 auto;
+  margin-left: 38rem ;
   padding: 0rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  z-index: -1;
 }
 
 .container > * {
@@ -130,7 +202,7 @@ form {
 
 input {
   margin-bottom: 1rem;
-  width: 20rem;
+  width: 10rem;
   padding: 1.5rem;
   font-size: 1.8rem;
   border: none;
