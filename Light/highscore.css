@@ -16,7 +16,5 @@
     transform: scale(1.025);
   }
   #finalScore{
-   font-size: 10vw;
-   text-align: center; 
-   width: max-content;
+   text-align: center;
   }
