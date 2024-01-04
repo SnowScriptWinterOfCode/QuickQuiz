@@ -72,7 +72,7 @@ startGame = () => {
     getNewQuestion();
     game.classList.remove('hidden');
     loader.classList.add('hidden');
-    next_btn.classList.remove("show"); 
+    next_btn.classList.remove("show");
 };
 
 const next_btn = document.querySelector("footer .next_btn");
@@ -99,14 +99,14 @@ getNewQuestion = () => {
 
     availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
-    clearInterval(counter); 
-    clearInterval(counterLine); 
-    startTimer(timeValue); 
-    startTimerLine(widthValue); 
-    timeText.textContent = "Time Left"; 
+    clearInterval(counter);
+    clearInterval(counterLine);
+    startTimer(timeValue);
+    startTimerLine(widthValue);
+    timeText.textContent = "Time Left";
 };
 
-next_btn.onclick = ()=>{
+next_btn.onclick = () => {
     getNewQuestion();
 }
 
@@ -121,8 +121,8 @@ choices.forEach((choice) => {
         const classToApply =
             selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-        clearInterval(counter); 
-        clearInterval(counterLine); 
+        clearInterval(counter);
+        clearInterval(counterLine);
 
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
@@ -137,33 +137,39 @@ choices.forEach((choice) => {
             getNewQuestion();
         }, 1000);
     });
-    next_btn.classList.add("show"); 
+    next_btn.classList.add("show");
 });
 
 function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {
-        timeCount.textContent = time;         time--; 
-        if (time < 9) { 
+        timeCount.textContent = time; time--;
+        if (time < 9) {
             let addZero = timeCount.textContent;
-            timeCount.textContent = "0" + addZero; 
+            timeCount.textContent = "0" + addZero;
         }
-        if (time <= 0) { 
-            clearInterval(counter); 
+        if (time <= 0) {
+            clearInterval(counter);
             getNewQuestion();
-            timeText.textContent = "Time Off"; 
-            const allOptions = choices.children.length; 
-            let correcAns = questions[questionCounter].answer; 
+            timeText.textContent = "Time Off";
+            const allOptions = choices.children.length;
+            let correcAns = questions[questionCounter].answer;
             for (i = 0; i < allOptions; i++) {
-                if (choices.children[i].textContent == correcAns) { 
-                    choices.children[i].setAttribute("class", "option correct"); 
-                    choices.children[i].insertAdjacentHTML("beforeend", tickIconTag); 
+                if (choices.children[i].textContent == correcAns) {
+                    choices.children[i].setAttribute("class", "option correct");
+                    choices.children[i].insertAdjacentHTML("beforeend", tickIconTag);
                     console.log("Time Off: Auto selected correct answer.");
                 }
             }
             for (i = 0; i < allOptions; i++) {
-                choices.children[i].classList.add("disabled"); 
+                choices.children[i].classList.add("disabled");
             }
+        }
+        if (time < 5) {
+            document.getElementById("timer").classList.add("alert");
+        }
+        else {
+            document.getElementById("timer").classList.remove("alert");
         }
     }
 }
@@ -171,10 +177,10 @@ function startTimer(time) {
 function startTimerLine(time) {
     counterLine = setInterval(timer, 29);
     function timer() {
-        time += 1; 
-        time_line.style.width = time + "px"; 
-        if (time > 549) { 
-            clearInterval(counterLine); 
+        time += 1;
+        time_line.style.width = time + "px";
+        if (time > 549) {
+            clearInterval(counterLine);
         }
     }
 }

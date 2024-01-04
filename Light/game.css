@@ -92,6 +92,9 @@
   height: 12rem;
   animation: spin 2s linear infinite;
 }
+.alert {
+  animation: bounceTimer 1.2s infinite ease-in-out;
+}
 
 @keyframes spin {
   0% {
@@ -107,6 +110,26 @@
   margin-bottom: 0px;
   position: relative;
   bottom: 0.8em;
+}
+
+@keyframes bounceTimer {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.5);
+  }
 }
 
 @media screen and (max-width: 600px) {
