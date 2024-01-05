@@ -5,7 +5,7 @@ const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const loader = document.getElementById('loader');
 const game = document.getElementById('game');
-
+const question1 = document.getElementById('question1');
 var soundCorrect = new Audio("sounds/correctAns.mp3");
 var soundIncorrect = new Audio("sounds/wrongAns.mp3");
 
@@ -14,7 +14,6 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuesions = [];
-
 let questions = [];
 
 fetch(
@@ -26,7 +25,7 @@ fetch(
     .then((loadedQuestions) => {
         questions = loadedQuestions.results.map((loadedQuestion) => {
             const formattedQuestion = {
-                question: loadedQuestion.question,
+                question:loadedQuestion.question,
             };
 
             const answerChoices = [...loadedQuestion.incorrect_answers];
@@ -70,6 +69,7 @@ getNewQuestion = () => {
         return window.location.assign('end.html');
     }
     questionCounter++;
+    question1.innerText = `Question  ${questionCounter}`;//update question number
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
     //Update the progress bar
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
@@ -101,11 +101,15 @@ choices.forEach((choice) => {
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
             soundCorrect.play();
+    
         }else {
             soundIncorrect.play();
+            display(currentQuestion.answer);
+            
         }
-
+        setInterval(displaynone,4000);
         selectedChoice.parentElement.classList.add(classToApply);
+
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
@@ -113,7 +117,27 @@ choices.forEach((choice) => {
         }, 1000);
     });
 });
+let string;
+function display(string) {
+    let display = document.getElementById('display');
+    if (string == 1) { 
+    display.innerText = `Correct option : A`;
+    }
+    if (string == 2) { 
+        display.innerText = `Correct option : B`;
+    }
+    if (string == 3) { 
+        display.innerText = `Correct option : C`;
+    }
+    if (string == 4) { 
+        display.innerText = `Correct option : D`;
+        }
 
+}
+function displaynone(){
+    let display = document.getElementById('display');
+    display.innerText = `Correct option : `;
+}
 incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
