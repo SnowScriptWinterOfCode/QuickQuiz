@@ -7,6 +7,7 @@
     <title>Game-play</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   </head>
   <body>
     <div class="container">
@@ -21,14 +22,7 @@
               <div id="progressBarFull"></div>
             </div>
           </div>
-          <div id="hud-item" class="time">
-            <div class="timer">
-              <div class="time_left_txt">Time Left</div>
-              <div class="timer_sec">15</div>
-          </div>
-          <div class="time_line"></div>  
-          </div>
-            <div id="hud-item">
+          <div id="hud-item">
             <p class="hud-prefix">
               Score
             </p>
@@ -54,11 +48,20 @@
           <p class="choice-prefix">D</p>
           <p class="choice-text" data-number="4"></p>
         </div>
-        <footer>
-          <button class="next_btn">Next Ques</button>
-      </footer>
       </div>
     </div>
+
+    <div>
+      <input type="checkbox" class="checkbox" id="checkbox">
+      <label for="checkbox" class="label">
+        <i class="fas fa-moon"></i>
+        <i class='fas fa-sun'></i>
+        <div class='ball'>
+      </label>
+    </div>
+  </div>
+
+    <script src="toggle.js"></script>
     <script src="game.js"></script>
   </body>
 </html>
