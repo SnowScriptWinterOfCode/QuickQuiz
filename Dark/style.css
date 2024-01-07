@@ -49,23 +49,16 @@ h3 {
 }
 
 /* UTILITIES */
-
 .container {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.container > * {
-  width: 100%;
-}
 
 .flex-column {
   display: flex;

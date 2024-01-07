@@ -27,3 +27,14 @@ saveHighScore = (e) => {
     localStorage.setItem('highScores', JSON.stringify(highScores));
     window.location.assign('index.html');
 };
+
+function shareOnFacebook() {
+    var urlToShare = "https://cpvalor.netlify.app";
+    window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(urlToShare), "_blank");
+}
+
+function shareOnTwitter() {
+    var textToShare = "I scored high in the game! Check it out!";
+    var urlToShare = "https://cpvalor.netlify.app";
+    window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(textToShare) + "&url=" + encodeURIComponent(urlToShare), "_blank");
+}
