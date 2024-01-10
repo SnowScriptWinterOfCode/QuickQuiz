@@ -207,3 +207,22 @@ incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
 };
+var count=0;
+function muteMe(elem) {
+    elem.muted = true;
+    elem.pause();
+}
+
+var playPauseBTN = document.getElementById('playpauseBTN')
+function playpause(){
+    if(count==0){
+        count==1;
+        Audio.play();
+    }else{
+        count=0;
+        audio.pause();
+        [].slice.call(document.querySelectorAll('audio')).forEach(function(audio) {
+            Audio.muted = true;
+        });
+    }
+}
