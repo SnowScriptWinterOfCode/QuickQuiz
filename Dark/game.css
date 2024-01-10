@@ -88,6 +88,13 @@
   margin-bottom:2px;
   display:block;
 }
+#display{
+  border:2px solid black;
+  border-radius: 5px;
+  width:100%;
+  margin-bottom:2px;
+  display:block;
+}
 /* LOADER */
 #loader {
   border: 1.6rem solid white;
