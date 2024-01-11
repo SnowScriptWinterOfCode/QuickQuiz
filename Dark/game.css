@@ -197,7 +197,7 @@ input#un-mute:checked ~ .mute img {
   border-radius: 50%;
   border-style: groove;
   border-color: rgb(9, 9, 54);
-  margin-left: 1009px;
+  right: 0;
   height: 50px;
   width: 50px;
 }
