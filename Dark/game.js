@@ -174,6 +174,13 @@ function startTimer(time) {
                 choices.children[i].classList.add("disabled"); 
             }
         }
+        if(time <5)
+        {
+            document.getElementById("timer").classList.add("alert");
+        }
+        else{
+            document.getElementById("timer").classList.remove("alert");
+        }
     }
 }
 
