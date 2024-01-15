@@ -8,7 +8,9 @@ const game = document.getElementById('game');
 const time_line = document.querySelector(".time .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
+
 const question1= document.getElementById('question1');
+
 
 var soundCorrect = new Audio("sounds/correctAns.mp3");
 var soundIncorrect = new Audio("sounds/wrongAns.mp3");
@@ -25,7 +27,6 @@ let counterLine;
 let widthValue = 0;
 
 let questions = [];
-
 
 fetch(
     'https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple'
@@ -60,7 +61,7 @@ fetch(
         console.error(err);
     });
 
-//CONSTANTS
+// CONSTANTS
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
@@ -125,8 +126,18 @@ choices.forEach((choice) => {
         clearInterval(counter); 
         clearInterval(counterLine); 
 
+        const timeRemaining = parseInt(timeCount.textContent);
+
         if (classToApply === 'correct') {
-            incrementScore(CORRECT_BONUS);
+            let scoreToAdd = 0;
+            if (timeRemaining > 10 && timeRemaining <= 15) {
+                scoreToAdd = 10;
+            } else if (timeRemaining > 5 && timeRemaining <= 10) {
+                scoreToAdd = 5;
+            } else if (timeRemaining > 0 && timeRemaining <= 5) {
+                scoreToAdd = 2;
+            }
+            incrementScore(scoreToAdd);
             soundCorrect.play();
         } else {
             soundIncorrect.play();
@@ -147,7 +158,8 @@ choices.forEach((choice) => {
 function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {
-        timeCount.textContent = time;         time--; 
+        timeCount.textContent = time;         
+        time--; 
         if (time < 9) { 
             let addZero = timeCount.textContent;
             timeCount.textContent = "0" + addZero; 
@@ -207,6 +219,7 @@ incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
 };
+
 var count=0;
 function muteMe(elem) {
     elem.muted = true;
