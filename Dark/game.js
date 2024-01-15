@@ -9,6 +9,9 @@ const time_line = document.querySelector(".time .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 
+const question1= document.getElementById('question1');
+
+
 var soundCorrect = new Audio("sounds/correctAns.mp3");
 var soundIncorrect = new Audio("sounds/wrongAns.mp3");
 var myMusic = new Audio("sounds/gametheme.mp3");
@@ -82,6 +85,7 @@ getNewQuestion = () => {
         return window.location.assign('end.html');
     }
     questionCounter++;
+    question1.innerText = `Question  ${questionCounter}`;//update question number
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
     //Update the progress bar
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
@@ -137,7 +141,10 @@ choices.forEach((choice) => {
             soundCorrect.play();
         } else {
             soundIncorrect.play();
+            display(currentQuestion.answer);
         }
+        setInterval(displaynone,4000);
+       
 
         selectedChoice.parentElement.classList.add(classToApply);
         setTimeout(() => {
@@ -194,7 +201,27 @@ function startTimerLine(time) {
         }
     }
 }
+let string;
+function display(string) {
+    let display = document.getElementById('display');
+    if (string == 1) { 
+    display.innerText = `Correct option : A`;
+    }
+    if (string == 2) { 
+        display.innerText = `Correct option : B`;
+    }
+    if (string == 3) { 
+        display.innerText = `Correct option : C`;
+    }
+    if (string == 4) { 
+        display.innerText = `Correct option : D`;
+        }
 
+}
+function displaynone() {
+    let display = document.getElementById('display');
+    display.innerText = `Correct option : `;
+}
 incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
