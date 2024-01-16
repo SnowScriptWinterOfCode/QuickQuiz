@@ -3,7 +3,7 @@ let bgMusic = new Audio(`/assets/music_bg/${index}.mp3`);
 
 function changeMusic() {
   bgMusic.src = `/assets/music_bg${index}.mp3`;
-  if (index <= music.length) {
+  if (index <= 5) {
     index += 1;
   } else {
     index = 1;
