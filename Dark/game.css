@@ -257,6 +257,7 @@ input#un-mute:checked ~ .mute img {
 
 .choice-container {
   position: relative;
+  
 }
 
 .choice-container .points-display {
