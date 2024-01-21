@@ -198,6 +198,15 @@ function startTimerLine(time) {
 incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
+
+    const pointsDisplay = document.createElement('div');
+    pointsDisplay.classList.add('points-display');
+    pointsDisplay.innerText = `+${num}`;
+    document.body.appendChild(pointsDisplay);
+
+    setTimeout(() => {
+        pointsDisplay.remove();
+    }, 1000);
 };
 
 var count=0;
