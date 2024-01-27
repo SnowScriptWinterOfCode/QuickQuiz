@@ -5,16 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Game-play</title>
-    <link rel="icon" href="/assets/logo-kviz.jpg" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="game.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    />
-
-
   </head>
   <body>
     <div class="container">
@@ -22,89 +14,20 @@
       <div id="game" class="justify-center flex-column hidden">
         <div id="hud">
           <div id="hud-item">
-            <p id="progressText" class="hud-prefix">Question</p>
+            <p id="progressText" class="hud-prefix">
+              Question
+            </p>
             <div id="progressBar">
               <div id="progressBarFull"></div>
             </div>
           </div>
-
-
-          <div id="hud-item">
-            <div id="hud-item" class="time">
-              <div class="timer">
-                <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec" id="timer">15</div>
-              </div>
-              <div class="time_line"></div>
-            </div>
-            <div id="hud-item">
-              <p class="hud-prefix">Score</p>
-              <h1 class="hud-main-text" id="score">0</h1>
-            </div>
-
+          <div id="hud-item" class="time">
+            <div class="timer">
+              <div class="time_left_txt">Time Left</div>
+              <div class="timer_sec" id="timer">15</div>
           </div>
-          <h2 id="question1">Question</h2>
-          <h2 id="question"></h2>
-          <div class="choice-container">
-            <p class="choice-prefix">A</p>
-            <p class="choice-text" data-number="1"></p>
+          <div class="time_line"></div>  
           </div>
-
-          <div class="choice-container">
-            <p class="choice-prefix">B</p>
-            <p class="choice-text" data-number="2"></p>
-          </div>
-          <div class="choice-container">
-            <p class="choice-prefix">C</p>
-            <p class="choice-text" data-number="3"></p>
-          </div>
-          <div class="choice-container">
-            <p class="choice-prefix">D</p>
-            <p class="choice-text" data-number="4"></p>
-          </div>
-
-          <label
-            for="un-mute"
-            class="unmute"
-            onclick="playpause()"
-            id="playpauseBTN"
-          >
-            <img
-              src="http://upload.wikimedia.org/wikipedia/commons/3/3f/Mute_Icon.svg"
-              alt="Mute_Icon.svg"
-              title="Mute icon"
-            />
-          </label>
-          <label
-            for="un-mute"
-            class="mute"
-            onclick="playpause()"
-            id="playpauseBTN"
-          >
-            <img
-              src="http://upload.wikimedia.org/wikipedia/commons/2/21/Speaker_Icon.svg"
-              alt="Speaker_Icon.svg"
-              title="Unmute/speaker icon"
-            />
-          </label>
-          <footer>
-            <button class="next_btn">Next Ques</button>
-          </footer>
-        </div>
-      </div>
-
-      <div>
-        <input type="checkbox" class="checkbox" id="checkbox" />
-        <label for="checkbox" class="label">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-          <div class="ball"></div>
-        </label>
-      </div>
-    </div>
-
-    <script src="toggle.js"></script>
-
             <div id="hud-item">
             <p class="hud-prefix">
               Score
@@ -142,8 +65,6 @@
       </footer>
       </div>
     </div>
-
     <script src="game.js"></script>
-    <script src="../app.js"></script>
   </body>
 </html>
