@@ -1,0 +1,17 @@
+const scores = [
+  { date: "2024-01-06", score: 80 },
+  { date: "2024-01-05", score: 75 },
+  // Add more scores as needed
+];
+
+// Function to display score history
+function displayScoreHistory() {
+  const scoreList = document.getElementById("score-list");
+  scoreList.innerHTML = ""; // Clear existing list
+
+  scores.forEach((entry) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `Date: ${entry.date}, Score: ${entry.score}%`;
+    scoreList.appendChild(listItem);
+  });
+}
