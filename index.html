@@ -1,75 +1,67 @@
- <!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Kviz: A quiz app</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kviz: A quiz app</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <link rel="icon" href="assets/logo-kviz.jpg" />
 
-  <style>
-    /* Add some basic styling for the score history */
-    #score-history {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div id="home" class="flex-center flex-column">
-      <h1>Kviz</h1>
-      <div class="flex-row">
-        <a class="btn" href="/Dark/index.html">Dark Theme</a>
-        <a class="btn" href="/Light/index.html">Light Theme</a>
-        <a class="btn" href="score.html">Score History</a>
+    <style>
+      /* Add some basic styling for the score history */
+      #score-history {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="home" class="flex-center flex-column">
+        <h1>Kviz</h1>
+        <div class="flex-row">
+          <a class="btn" href="/Dark/index.html">Dark Theme</a>
+          <a class="btn" href="/Light/index.html">Light Theme</a>
+          <a class="btn" href="score.html">Score History</a>
+        </div>
       </div>
     </div>
 
-    <!DOCTYPE html> 
-<html lang="en">
-<head>
-  <!-- ... (your existing head content) ... -->
-  <script src="index.js"></script>
-</head>
-<body>
-  <!-- ... (your existing body content) ... -->
+    <!-- Score History Section -->
+    <div id="score-history"></div>
 
-  <!-- Score History Section -->
-  <div id="score-history">
-  
-  </div>
-</body>
-</html>
-<!-- ... (your existing JavaScript) ... -->
-<script>
-  // Function to toggle the visibility of the score history
-  function toggleScoreHistory() {
-    var scoreHistory = document.getElementById("score-history");
-    scoreHistory.style.display = (scoreHistory.style.display === 'block') ? 'none' : 'block';
+    <!-- Spinner Loader -->
+    <div id="spinner" class="spinner"></div>
 
-    // Call the function to display score history when showing it
-    if (scoreHistory.style.display === 'block') {
-      displayScoreHistory();
-    }
-  }
-</script>
-<!-- ... (your existing JavaScript) ... -->
+    <script src="index.js"></script>
+    <script src="music.js"></script>
 
+    <script>
+      // Function to toggle the visibility of the score history
+      function toggleScoreHistory() {
+        var scoreHistory = document.getElementById("score-history");
+        scoreHistory.style.display =
+          scoreHistory.style.display === "block" ? "none" : "block";
 
-  <!-- Spinner Loader -->
-  <div id="spinner" class="spinner"></div>
+        // Call the function to display score history when showing it
+        if (scoreHistory.style.display === "block") {
+          displayScoreHistory();
+        }
+      }
+    </script>
 
-  <!-- Uncomment the script if you want to use it -->
-  <!-- <script src="toggle.js"></script> -->
-  <script src="SPINNER.js"></script>
+    <!-- Uncomment the script if you want to use it -->
+    <!-- <script src="toggle.js"></script> -->
+    <script src="SPINNER.js"></script>
 
-  <script>
-    // Function to toggle the visibility of the score history
-    function toggleScoreHistory() {
-      var scoreHistory = document.getElementById("score-history");
-      scoreHistory.style.display = (scoreHistory.style.display === 'block') ? 'none' : 'block';
-    }
-  </script>
-</body>
+    <script>
+      // Function to toggle the visibility of the score history
+      function toggleScoreHistory() {
+        var scoreHistory = document.getElementById("score-history");
+        scoreHistory.style.display =
+          scoreHistory.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
 </html>
